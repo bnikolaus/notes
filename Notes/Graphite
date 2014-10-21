@@ -1,0 +1,43 @@
+#Graphite/Diamond
+
+### Installing Graphite on Centos 
+http://centoshowtos.org/monitoring/graphite/
+
+### salt graphite/diamond deployment
+    salt '*' state.sls metrics.graphite test=true
+    salt '*' state.sls metrics.diamond test=true
+
+### Formulas
+- diamond => https://github.com/yandex-sysmon/diamond-formula.git
+- StatsD => https://github.com/alexclear/salt-states-graphite-statsd-gdash
+- Grafana => https://github.com/brandentimm/logstash_forwarder-formula.git
+
+
+### how to clean out Graphite old graphiteData
+- /var/lib/carbon/whisper/system
+
+### Default Graphite Ports
+- port 2003
+- pickle 2004
+
+### Graphite Clustering
+- http://grey-boundary.com/the-architecture-of-clustering-graphite/
+
+### Graphite Services 
+- carbon - event driven port listener, cache daemons, carbon.conf
+- whisper - .wsp files, storage-schemas.conf, set retention periods for specific hosts
+
+### Great Article on Graphite Reports
+- http://matt.aimonetti.net/posts/2013/06/26/practical-guide-to-graphite-monitoring/
+
+### Diamond Setup 
+- yum install python-devel
+- pip install diamond
+- pip install pyrabbit
+
+### Setup Diamond Collectors
+    diamond-setup -C FilestatCollector
+    diamond-setup -C VMStatCollector
+    diamond-setup -C DiskSpaceCollector
+    diamond-setup -C NginxCollector
+    diamond-setup -C DiskUsageCollector

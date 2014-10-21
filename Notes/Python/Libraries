@@ -1,0 +1,21 @@
+# Library Documentation
+- https://readthedocs.org/
+
+# Favorites
+- multiprocessing - https://docs.python.org/2/library/multiprocessing.html
+- invoke
+- fabric
+- requests
+
+
+# Testing
+- py.test - unit testing
+- tox - test versions
+- mock - http://www.voidspace.org.uk/python/mock/index.html
+
+# Code examples
+- http://www.hlevkin.com/Shell_progr/hellopython.htm
+
+
+globs - creating file lists
+fabric calls invoke to create a local build
